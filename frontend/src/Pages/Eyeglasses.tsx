@@ -12,7 +12,7 @@ const allProducts = [
     price: 2624,
     image: "/images/William Style.svg",
     isNew: true,
-  },  
+  },
   {
     id: 2,
     name: "Smart Kids",
@@ -82,6 +82,7 @@ const allProducts = [
 const Eyeglasses = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [sortOption, setSortOption] = useState("Sort by");
+  const [isFilterSidebarOpen, setIsFilterSidebarOpen] = useState(false); // State for mobile sidebar visibility
 
   const showMore = () => setVisibleCount(prev => prev + 3);
 
@@ -102,7 +103,7 @@ const Eyeglasses = () => {
   return (
     <div className="bg-[#fafbfc] min-h-screen flex flex-col">
       <Header />
-      <Breadcrumb 
+      <Breadcrumb
         items={[
           { label: 'Home', path: '/' },
           { label: 'Eyeglasses', path: '/eyeglasses', isActive: true }
@@ -110,17 +111,31 @@ const Eyeglasses = () => {
       />
 
       <div className="flex flex-col md:flex-row max-w-6xl mx-auto w-full px-4 md:px-0 py-6 md:py-8 flex-1">
+        {/* Mobile Filter Toggle Button */}
+        <div className="md:hidden flex justify-end mb-4">
+          <button
+            onClick={() => setIsFilterSidebarOpen(!isFilterSidebarOpen)}
+            className="p-2 bg-blue-600 text-white rounded-md flex items-center"
+          >
+            {isFilterSidebarOpen ? 'Hide Filters' : 'Show Filters'}
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zM3 16a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z"></path>
+            </svg>
+          </button>
+        </div>
+
         {/* Sidebar */}
-        <div className="mb-6 md:mb-0 md:mr-8">
+        {/* Use a conditional class for mobile visibility */}
+        <div className={`mb-6 md:mb-0 md:mr-8 md:block ${isFilterSidebarOpen ? 'block' : 'hidden'}`}>
           <FilterSidebar />
         </div>
 
         {/* Main Content */}
         <main className="flex-1">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6">
-            <h2 className="text-xl font-semibold">Eyeglasses Listing</h2>
+            <h2 className="text-xl font-semibold mb-2 sm:mb-0">Eyeglasses Listing</h2>
             <select
-              className="p-2 rounded border border-gray-300 text-sm"
+              className="p-2 rounded border border-gray-300 text-sm w-full sm:w-auto" // Added w-full for mobile
               value={sortOption}
               onChange={e => setSortOption(e.target.value)}
             >
@@ -132,7 +147,8 @@ const Eyeglasses = () => {
           </div>
 
           {/* Product Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Changed grid-cols-1 to grid-cols-2 on sm for better mobile layout */}
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6"> {/* Added xs:grid-cols-2 */}
             {sortedProducts.slice(0, visibleCount).map((item, idx) => (
               <Link
                 to={`/product/${item.id}`}
