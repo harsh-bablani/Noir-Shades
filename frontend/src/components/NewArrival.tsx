@@ -8,7 +8,7 @@ const newArrivals = [
     price: 1299,
     oldPrice: 4000,
     discount: "-50%",
-		image: ".//images/Wonder 24.svg",
+		image: ".//images/Visate.svg",
     isNew: true,
   },
   {
