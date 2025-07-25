@@ -2,27 +2,27 @@
 const trending = [
   {
     name: "ROUND",
-    image: "./public//images/ROUND.svg",
+    image: ".//images/ROUND.svg",
   
   },
   {
     name: "CAT-EYE",
-    image: "./public//images/CAT-EYE.svg",
+    image: ".//images/CAT-EYE.svg",
   
   },
   {
     name: "WAYFARER",
-    image: "./public//images/WAYFARER.svg",
+    image: ".//images/WAYFARER.svg",
    
   },
   {
     name: "AVIATOR",
-    image: "./public//images/AVIATOR.svg",
+    image: ".//images/AVIATOR.svg",
   
   },
   {
     name: "SUNGLASSES",
-    image: "./public//images/SUNGLASSES.svg",
+    image: ".//images/SUNGLASSES.svg",
 
   }
 ];

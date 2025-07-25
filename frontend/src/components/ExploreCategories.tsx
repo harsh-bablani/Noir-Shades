@@ -2,19 +2,19 @@
 const categories = [
   {
     label: "Men glasses",
-		image: "./public//images/MEN.svg",
+		image: ".//images/MEN.svg",
     bg: "#eaf0fb",
     link: "#"
   },
   {
     label: "Women glasses",
-		image: "./public//images/WOMEN.svg",
+		image: ".//images/WOMEN.svg",
     bg: "#f6fae6",
     link: "#"
   },
   {
     label: "Kids glasses",
-		image: "./public//images/KIDS.svg",
+		image: ".//images/KIDS.svg",
     bg: "#f8ede4",
     link: "#"
   }

@@ -15,7 +15,7 @@ const newArrivals = [
     id: 2,
     name: "Smart Kids",
     price: 2224,
-		image: "./public//images/Smart Kids.svg",
+		image: ".//images/Smart Kids.svg",
     isNew: false,
   },
   {
@@ -24,14 +24,14 @@ const newArrivals = [
     price: 1679,
     oldPrice: 3179,
     discount: "-50%",
-		image: "./public//images/Visat.svg",
+		image: ".//images/Visat.svg",
     isNew: false,
   },
   {
     id: 4,
     name: "Tom H",
     price: 6279,
-		image: "./public//images/Tom Harry.svg",
+		image: ".//images/Tom Harry.svg",
     isNew: false,
   },
 ];
