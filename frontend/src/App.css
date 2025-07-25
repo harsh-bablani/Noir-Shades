@@ -1,0 +1,15 @@
+.slick-slider, .slick-track {
+  display: flex !important;
+  align-items: stretch !important;
+}
+.slick-track {
+  display: flex !important;
+}
+.slick-slide > div {
+  height: 100%;
+}
+/* Make slick slider show cards in a row */
+.slick-track {
+  display: flex !important;
+  align-items: stretch;
+}
